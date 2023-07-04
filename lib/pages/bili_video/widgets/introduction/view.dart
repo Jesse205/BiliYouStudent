@@ -76,7 +76,7 @@ class _IntroductionPageState extends State<IntroductionPage>
           thickness: 1,
           height: 20,
         ),
-        ListView.builder(
+        /*ListView.builder(
           addAutomaticKeepAlives: false,
           addRepaintBoundaries: false,
           padding: const EdgeInsets.all(0),
@@ -102,7 +102,7 @@ class _IntroductionPageState extends State<IntroductionPage>
               }),
             );
           },
-        )
+        )*/
       ],
     );
   }

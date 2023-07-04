@@ -30,9 +30,9 @@ if (keystorePropertiesFile.exists()) {
 }
 
 def _storeFile = file(System.getenv("KEYSTORE") ?: keystoreProperties.getProperty("storeFile") ?: "keystore.jks")
-def _storePassword = System.getenv("KEYSTORE_PASSWORD") ?: keystoreProperties.getProperty("storePassword")
+def _storePassword = System.getenv("KEYSTORE_PASSWORD") ?: keystoreProperties.getProperty("keyPassword")
 def _keyAlias = System.getenv("KEY_ALIAS") ?: keystoreProperties.getProperty("keyAlias")
-def _keyPassword = System.getenv("KEY_PASSWORD") ?: keystoreProperties.getProperty("keyPassword")
+def _keyPassword = System.getenv("KEY_PASSWORD") ?: keystoreProperties.getProperty("storePassword")
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
@@ -58,7 +58,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.lucinhu.bili_you"
+        applicationId "com.lucinhu.bili_you.student"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion 21
@@ -69,26 +69,26 @@ android {
     }
 
     signingConfigs {
-        release {
+       /*  release {
             storeFile _storeFile
             storePassword _storePassword
             keyAlias _keyAlias
             keyPassword _keyPassword
             v1SigningEnabled true
             v2SigningEnabled true
-        }
-        debug {
+        } */
+       /*  debug {
             storeFile _storeFile
             storePassword _storePassword
             keyAlias _keyAlias
             keyPassword _keyPassword
             v1SigningEnabled true
             v2SigningEnabled true
-        }
+        } */
     }
 
     buildTypes {
-        release {
+        /* release {
             if (signingConfigs.release.storePassword != null){
                 signingConfig signingConfigs.release
             }
@@ -97,7 +97,7 @@ android {
             if (signingConfigs.debug.storePassword != null){
                 signingConfig signingConfigs.release
             }
-        }
+        } */
     }
 }
 

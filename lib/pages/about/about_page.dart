@@ -8,8 +8,8 @@ import 'package:url_launcher/url_launcher_string.dart';
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
 
-  final String projectUrl = "https://github.com/lucinhu/bili_you";
-  final String authorUrl = "https://github.com/lucinhu";
+  final String projectUrl = "https://gitee.com/Jesse205/BiliYouStudent";
+  final String authorUrl = "https://gitee.com/Jesse205";
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +28,15 @@ class AboutPage extends StatelessWidget {
               }
             },
           ),
-          trailing: TextButton(
+          /*trailing: TextButton(
               child: const Text("检查更新"),
               onPressed: () {
                 SettingsUtil.checkUpdate(context);
-              }),
+              }),*/
         ),
         ListTile(
           title: const Text("作者"),
-          subtitle: const Text("lucinhu"),
+          subtitle: const Text("lucinhu、Jesse205"),
           onTap: () {
             launchUrlString(authorUrl);
           },

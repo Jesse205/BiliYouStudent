@@ -24,9 +24,9 @@ class _HomePageState extends State<HomePage>
   @override
   bool get wantKeepAlive => true;
   late HomeController controller;
-  final RecommendPage recommendPage = const RecommendPage();
-  final PopularVideoPage popularVideoPage = const PopularVideoPage();
-  final LiveTabPage liveTabPage = const LiveTabPage();
+  // final RecommendPage recommendPage = const RecommendPage();
+  // final PopularVideoPage popularVideoPage = const PopularVideoPage();
+  // final LiveTabPage liveTabPage = const LiveTabPage();
   List<Map<String, dynamic>> tabsList = [];
 
   @override
@@ -59,15 +59,15 @@ class _HomePageState extends State<HomePage>
                 .push(GetPageRoute(page: () => const UiTestPage()));
           },
           onPressed: () {
-            Navigator.of(context).push(GetPageRoute(
+            /*Navigator.of(context).push(GetPageRoute(
                 page: () => SearchInputPage(
                       key: ValueKey(
                           'SearchInputPage:${controller.defaultSearchWord.value}'),
                       defaultHintSearchWord: controller.defaultSearchWord.value,
                     )));
-
+*/
             //更新搜索框默认词
-            controller.refreshDefaultSearchWord();
+            // controller.refreshDefaultSearchWord();
           },
           color: Theme.of(context).colorScheme.surfaceVariant,
           height: 50,
@@ -76,33 +76,33 @@ class _HomePageState extends State<HomePage>
           hoverElevation: 0,
           disabledElevation: 0,
           highlightElevation: 0,
-          shape: const RoundedRectangleBorder(
+          /*shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(28)),
-          ),
+          ),*/
           child: Row(
             children: [
-              InkWell(
+              /*InkWell(
                 borderRadius: BorderRadius.circular(15),
                 onTap: () {
                   //更新搜索框默认词
-                  controller.refreshDefaultSearchWord();
+                  // controller.refreshDefaultSearchWord();
                 },
                 child: Icon(
                   (Icons.search),
                   size: 24,
                   color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
-              ),
+              ),*/
               const SizedBox(
                 width: 16,
               ),
-              Expanded(
+              /*Expanded(
                   child: Obx(() => Text(
                       //搜索框默认词
                       controller.defaultSearchWord.value,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.bodyLarge))),
+                      style: Theme.of(context).textTheme.bodyLarge))),*/
               const SizedBox(
                 width: 16,
               ),
@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage>
           isScrollable: true,
           tabs: tabsList.map((e) => Tab(text: e['text'])).toList(),
           controller: controller.tabController,
-          onTap: (index) {
+          /*onTap: (index) {
             if (controller.tabController!.indexIsChanging) return;
             switch (index) {
               case 0:
@@ -162,23 +162,24 @@ class _HomePageState extends State<HomePage>
                 break;
               default:
             }
-          },
+          },*/
         ),
       ),
       body: TabBarView(
         controller: controller.tabController,
-        children: tabsList.map((e) {
-          switch (e['text']) {
+        children: /*tabsList.map((e) {
+          *//*switch (e['text']) {
             case '直播':
               return liveTabPage;
             case '推荐':
               return recommendPage;
             case '热门':
               return popularVideoPage;
-            default:
+            default:*//*
               return const Center(child: Text("该功能暂无"));
-          }
-        }).toList(),
+          // }
+        }).toList()*/
+        [Center(child: Text("该功能暂无"))],
       ),
     );
   }

@@ -1,4 +1,4 @@
-# Bili You
+# Bili You 学生版
 
 <div align=center>
 <img src="./assets/icon/bili.png" width = "250" alt="" align=center />
@@ -11,6 +11,8 @@
 </div>
 
 一个用flutter制作的第三方B站客户端.
+
+原版：<https://github.com/lucinhu/bili_you>
 
 ## 功能实现
 
@@ -28,6 +30,11 @@
 - [x] 用户投稿
 - [x] 番剧搜索
 - [x] 番剧播放
+
+## 修改内容
+
+- 去除首页所有板块
+- 去除搜索框
 
 ## 截图
 

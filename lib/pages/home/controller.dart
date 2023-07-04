@@ -18,17 +18,17 @@ class HomeController extends GetxController {
 
   RxString defaultSearchWord = "搜索".obs;
   final List<Map<String, String>> tabsList = [
-    {'text': '直播', 'id': '', 'controller': 'LiveTabPageController'},
+    /*{'text': '直播', 'id': '', 'controller': 'LiveTabPageController'},
     {'text': '推荐', 'id': '', 'controller': 'RecommendController'},
     {'text': '热门', 'id': '', 'controller': 'PopularVideoController'},
-    {'text': '番剧', 'id': '', 'controller': ''}
+    {'text': '番剧', 'id': '', 'controller': ''}*/
   ];
   late TabController? tabController;
   final int tabInitIndex = 1;
   RxInt tabIndex = 1.obs;
 
   _initData() async {
-    refreshDefaultSearchWord();
+    // refreshDefaultSearchWord();
   }
 
   //刷新搜索框默认词
